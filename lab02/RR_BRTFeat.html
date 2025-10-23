@@ -13,6 +13,7 @@
 
 <body>
 
+
     <!-- Navigation bar -->
     <div class="topnav" id="myTopnav">
         <!-- Links to different sections -->
@@ -22,7 +23,6 @@
         <a class="active" href="RR_BRTFeat.html">RapidRide Features</a>
         <a href="exserv.html">Existing Service</a>
         <a href="plserv.html">Planned Service</a>
-        <a href="see_also.html">See Also</a>
         <a href="references.html">References</a>
 
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens -->
@@ -37,30 +37,81 @@
         <h1>General RapidRide Features</h1>
         <p>The following features are general features of all RapidRide buses and lines:</p>
         <br><br>
-        <h4>Tech Pylons</h4>
-        <p>The pylons vary by age and stop rider volume but generally include real-time arrival information, backlit route maps, and ORCA readers for off-board fare payment.</p>
-        <img src="img/RRFeat/pylon.jpg" style = "max-width:100%; height:auto;">
-        <br><br>
-        <h4>Branding</h4>
-        <p>All RapidRide buses are painted in a distinctive red and silver livery to differentiate them from standard Metro buses. The branding extends to shelters, signage, and marketing materials to create a cohesive identity for the RapidRide network.</p>
-        <img src ="img/RRFeat/livery.JPG" style = "max-width:100%; height:auto;">
-        <br><br>
-        <h4>Enhanced shelters</h4>
-        <p> All RapidRide stops feature enhanced shelters with improved area lighting and weather protection.</p>
-        <img src="img/RRFeat/shelter.png" style = "max-width:100%; height:auto;">
-        <br><br>
-        <h4>Transit Police Patrols</h4>
-        <p>Lines feature regular transit police patrols both onboard and at stops for additional security.</p>
-        <img src="img/RRFeat/police.jpg" style = "width:100%; height:auto;">
-        <br><br>
-        <h4>Fewer Stops</h4>
-        <p>RapidRide lines have far fewer stops than the routes they replaced, with an average spacing of about 1 mile between stops. This allows for faster travel times and improved reliability.</p>
-        <img src="img/RRFeat/stops.jpg" style = "max-width:100%; max-height:50%;">
-        <br><br>
-        <h4>Accessibility Improvements</h4>
-        <p>RapidRide lines are designed with accessibility in mind, featuring low-floor buses and level boarding platforms among other accessibility upgrades.</p>
-        <img src="img/RRFeat/wheelchair.jpg" style = "width:100%; height:auto;">
-    </div>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="slide-image-wrapper">
+    <img src="img/BRTFeat/Bus Lane.jpg" style="width:100%">
+  </div>
+  <div class="white-text">Dedicated Bus Lanes</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="slide-image-wrapper">
+    <img src="img/BRTFeat/Signal.jpg" style="width:100%">
+  </div>
+  <div class="black-text">Traffic Signal Priority</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="slide-image-wrapper">
+    <img src="img/RRFeat/lights.jpg" style="width:100%">
+  </div>
+  <div class="white-text">Brighter Area Lighting</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="slide-image-wrapper">
+    <img src="img/RRFeat/livery.JPG" style="width:100%">
+  </div>
+  <div class="white-text">Custom RapidRide Livery</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="slide-image-wrapper">
+    <img src="img/RRFeat/pylons.png" style="width:100%">
+  </div>
+  <div class="white-text">Tech Pylons with Real-Time Arrival and Off-Board Fare Payment</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="slide-image-wrapper">
+    <img src="img/RRFeat/police.jpg" style="width:100%">
+  </div>
+  <div class="white-text">Transit Police Patrols</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="slide-image-wrapper">
+    <img src="img/RRFeat/wheelchair.jpg" style="width:100%">
+  </div>
+  <div class="black-text">Level Boarding</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="slide-image-wrapper">
+    <img src="img/RRFeat/shelter.png" style="width:100%">
+  </div>
+  <div class="white-text">Enhanced Shelters</div>
+</div>
+
+
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span> 
+</div>
 
     <!-- Including the main.js file for JavaScript functionality -->
     <script src="js/main.js"></script>

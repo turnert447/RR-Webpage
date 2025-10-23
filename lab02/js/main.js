@@ -18,3 +18,197 @@ function responsive_control() {
     x.className = "topnav";
   }
 }
+
+        (function () {
+            // Initialize accordion buttons
+            var acc = document.querySelectorAll('.accordion');
+
+            function closePanel(panel, btn) {
+                panel.style.maxHeight = null;
+                panel.classList.remove('open');
+                if (btn) btn.classList.remove('active');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+                panel.setAttribute('aria-hidden', 'true');
+            }
+
+            function openPanel(panel, btn) {
+                // set explicit height to enable transition
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                panel.classList.add('open');
+                if (btn) btn.classList.add('active');
+                if (btn) btn.setAttribute('aria-expanded', 'true');
+                panel.setAttribute('aria-hidden', 'false');
+            }
+
+            acc.forEach(function (btn) {
+                // Ensure button accessibility
+                btn.setAttribute('role', 'button');
+                btn.setAttribute('aria-expanded', 'false');
+                // Ensure the following panel has the right attributes
+                var panel = btn.nextElementSibling;
+                if (panel) {
+                    panel.setAttribute('aria-hidden', 'true');
+                }
+
+                btn.addEventListener('click', function () {
+                    var isOpen = btn.classList.contains('active');
+                    // Optionally close other panels if you want only one open at a time
+                    // close others
+                    acc.forEach(function (otherBtn) {
+                        var otherPanel = otherBtn.nextElementSibling;
+                        if (otherBtn !== btn && otherBtn.classList.contains('active')) {
+                            closePanel(otherPanel, otherBtn);
+                        }
+                    });
+
+                    if (isOpen) {
+                        closePanel(panel, btn);
+                    } else {
+                        openPanel(panel, btn);
+                    }
+                });
+
+                // Recalculate maxHeight when images or other media inside the panel load
+                if (panel) {
+                    var imgs = panel.querySelectorAll('img');
+                    imgs.forEach(function (img) {
+                        if (!img.complete) {
+                            img.addEventListener('load', function () {
+                                if (panel.classList.contains('open')) {
+                                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+
+            // On window resize, update the maxHeight for any open panels
+            window.addEventListener('resize', function () {
+                acc.forEach(function (btn) {
+                    var panel = btn.nextElementSibling;
+                    if (btn.classList.contains('active') && panel) {
+                        // Temporarily clear to get natural height, then reassign to animate to new height
+                        panel.style.maxHeight = panel.scrollHeight + 'px';
+                    }
+                });
+            });
+        })();
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+       (function () {
+            // Initialize accordion buttons
+            var acc = document.querySelectorAll('.accordion');
+
+            function closePanel(panel, btn) {
+                panel.style.maxHeight = null;
+                panel.classList.remove('open');
+                if (btn) btn.classList.remove('active');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+                panel.setAttribute('aria-hidden', 'true');
+            }
+
+            function openPanel(panel, btn) {
+                // set explicit height to enable transition
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                panel.classList.add('open');
+                if (btn) btn.classList.add('active');
+                if (btn) btn.setAttribute('aria-expanded', 'true');
+                panel.setAttribute('aria-hidden', 'false');
+            }
+
+            acc.forEach(function (btn) {
+                // Ensure button accessibility
+                btn.setAttribute('role', 'button');
+                btn.setAttribute('aria-expanded', 'false');
+                // Ensure the following panel has the right attributes
+                var panel = btn.nextElementSibling;
+                if (panel) {
+                    panel.setAttribute('aria-hidden', 'true');
+                }
+
+                btn.addEventListener('click', function () {
+                    var isOpen = btn.classList.contains('active');
+                    // Optionally close other panels if you want only one open at a time
+                    // close others
+                    acc.forEach(function (otherBtn) {
+                        var otherPanel = otherBtn.nextElementSibling;
+                        if (otherBtn !== btn && otherBtn.classList.contains('active')) {
+                            closePanel(otherPanel, otherBtn);
+                        }
+                    });
+
+                    if (isOpen) {
+                        closePanel(panel, btn);
+                    } else {
+                        openPanel(panel, btn);
+                    }
+                });
+
+                // Recalculate maxHeight when images or other media inside the panel load
+                if (panel) {
+                    var imgs = panel.querySelectorAll('img');
+                    imgs.forEach(function (img) {
+                        if (!img.complete) {
+                            img.addEventListener('load', function () {
+                                if (panel.classList.contains('open')) {
+                                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+
+            // On window resize, update the maxHeight for any open panels
+            window.addEventListener('resize', function () {
+                acc.forEach(function (btn) {
+                    var panel = btn.nextElementSibling;
+                    if (btn.classList.contains('active') && panel) {
+                        // Temporarily clear to get natural height, then reassign to animate to new height
+                        panel.style.maxHeight = panel.scrollHeight + 'px';
+                    }
+                });
+            });
+        })();
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}

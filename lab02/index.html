@@ -7,6 +7,9 @@
     <!-- Including the main.css file for styling -->
     <link rel="stylesheet" href="css/main.css">
 
+    <!-- Including the map.css file for map-specific styling -->
+    <link rel="stylesheet" href="css/map.css">
+
     <!-- Including the Font Awesome CSS library for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -23,7 +26,6 @@
         <a href="exserv.html">Existing Service</a>
         <a href="plserv.html">Planned Service</a>
         <!-- Additional links -->
-        <a href="see_also.html">See Also</a>
         <a href="references.html">References</a>
 
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links on smaller screens -->
@@ -36,12 +38,64 @@
     <div class="content">
         <!-- Abstract section -->
         <h1>King County RapidRide Network</h1>
-        <img src="img/RRNetwork.jpg" style="max-width: 100%; height: auto;">
+
+                <!-- Description text -->
         <p>Launched as part of King County Metro's "Transit Now" bond intiative in 2006, the RapidRide program is a network of limited-stop routes with varying levels of bus rapid transit features. All of the routes replace pre-existing routes with far fewer stops, bus priority lanes, and traffic signal preemption, combining for an average speed increase of 40% over the lines they replaced. The lines run at high frequency, no less than 10 minutes during commuting hours and every 15 minutes on weekends and off-peak hours. This project will be an overview of the Rapid Ride's existing lines and planned projects. </p>
     </div>
+        
+        <!-- Interactive Map Section -->
+        <p class="instructions">Hover over the colored markers for some quick facts on each line. Click for more information.</p>
+        
+        <div class="map-wrapper">
+            <!-- Your actual map image -->
+            <img src="img/RRNetwork.jpg" alt="RapidRide Network Map" id="mapImage">
+            
+            <!-- Route markers (positioned with % so they scale with image) -->
+            <div class="route-marker line-a" data-line="A">A</div>
+            <div class="route-marker line-b" data-line="B">B</div>
+            <div class="route-marker line-c" data-line="C">C</div>
+            <div class="route-marker line-d" data-line="D">D</div>
+            <div class="route-marker line-e" data-line="E">E</div>
+            <div class="route-marker line-f" data-line="F">F</div>
+            <div class="route-marker line-g" data-line="G">G</div>
+            <div class="route-marker line-h" data-line="H">H</div>
+            <div class="route-marker line-i" data-line="I">I</div>
+            <div class="route-marker line-j" data-line="J">J</div>
+            <div class="route-marker line-k" data-line="K">K</div>
+            <div class="route-marker line-r" data-line="R">R</div>
+            
+            <!-- Info box that appears on hover -->
+            <div class="info-box" id="infoBox">
+                <h3 id="infoTitle"></h3>
+                <p class="route-name" id="infoRoute"></p>
+                <p id="infoDescription"></p>
+            </div>
+        </div>
+
+        <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #C8102E;"></span> Existing Lines
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #FFD100;"></span> Planned Lines
+            </div>
+           
+        </div>
+        
+        <div class="mySlides" data-caption="Dedicated Bus Lanes">
+  <div class="slide-image-wrapper"><img src="img/slide1.jpg" alt=""></div>
+</div>
+
+<div class="mySlides" data-caption="Peak‑period frequency improvements">
+  <div class="slide-image-wrapper"><img src="img/slide2.jpg" alt=""></div>
+</div>
 
     <!-- Including the main.js file for JavaScript functionality -->
     <script src="js/main.js"></script>
+    
+    <!-- Including the map.js file for map-specific functionality -->
+    <script src="js/map.js"></script>
 
 </body>
 
