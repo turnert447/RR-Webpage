@@ -32,7 +32,6 @@ function responsive_control() {
             }
 
             function openPanel(panel, btn) {
-                // set explicit height to enable transition
                 panel.style.maxHeight = panel.scrollHeight + 'px';
                 panel.classList.add('open');
                 if (btn) btn.classList.add('active');
@@ -41,10 +40,8 @@ function responsive_control() {
             }
 
             acc.forEach(function (btn) {
-                // Ensure button accessibility
                 btn.setAttribute('role', 'button');
                 btn.setAttribute('aria-expanded', 'false');
-                // Ensure the following panel has the right attributes
                 var panel = btn.nextElementSibling;
                 if (panel) {
                     panel.setAttribute('aria-hidden', 'true');
@@ -52,8 +49,6 @@ function responsive_control() {
 
                 btn.addEventListener('click', function () {
                     var isOpen = btn.classList.contains('active');
-                    // Optionally close other panels if you want only one open at a time
-                    // close others
                     acc.forEach(function (otherBtn) {
                         var otherPanel = otherBtn.nextElementSibling;
                         if (otherBtn !== btn && otherBtn.classList.contains('active')) {
@@ -68,7 +63,6 @@ function responsive_control() {
                     }
                 });
 
-                // Recalculate maxHeight when images or other media inside the panel load
                 if (panel) {
                     var imgs = panel.querySelectorAll('img');
                     imgs.forEach(function (img) {
@@ -123,7 +117,6 @@ for (i = 0; i < acc.length; i++) {
             }
 
             function openPanel(panel, btn) {
-                // set explicit height to enable transition
                 panel.style.maxHeight = panel.scrollHeight + 'px';
                 panel.classList.add('open');
                 if (btn) btn.classList.add('active');
@@ -132,10 +125,8 @@ for (i = 0; i < acc.length; i++) {
             }
 
             acc.forEach(function (btn) {
-                // Ensure button accessibility
                 btn.setAttribute('role', 'button');
                 btn.setAttribute('aria-expanded', 'false');
-                // Ensure the following panel has the right attributes
                 var panel = btn.nextElementSibling;
                 if (panel) {
                     panel.setAttribute('aria-hidden', 'true');
@@ -143,8 +134,6 @@ for (i = 0; i < acc.length; i++) {
 
                 btn.addEventListener('click', function () {
                     var isOpen = btn.classList.contains('active');
-                    // Optionally close other panels if you want only one open at a time
-                    // close others
                     acc.forEach(function (otherBtn) {
                         var otherPanel = otherBtn.nextElementSibling;
                         if (otherBtn !== btn && otherBtn.classList.contains('active')) {
@@ -159,7 +148,6 @@ for (i = 0; i < acc.length; i++) {
                     }
                 });
 
-                // Recalculate maxHeight when images or other media inside the panel load
                 if (panel) {
                     var imgs = panel.querySelectorAll('img');
                     imgs.forEach(function (img) {
@@ -174,12 +162,10 @@ for (i = 0; i < acc.length; i++) {
                 }
             });
 
-            // On window resize, update the maxHeight for any open panels
             window.addEventListener('resize', function () {
                 acc.forEach(function (btn) {
                     var panel = btn.nextElementSibling;
                     if (btn.classList.contains('active') && panel) {
-                        // Temporarily clear to get natural height, then reassign to animate to new height
                         panel.style.maxHeight = panel.scrollHeight + 'px';
                     }
                 });
